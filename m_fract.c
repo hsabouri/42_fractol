@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 14:13:17 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/18 14:27:23 by hsabouri         ###   ########.fr       */
+/*   Updated: 2016/12/20 13:45:37 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		julia(double zx, double zy, double cx, double cy, int iteration)
 			return (i);
 		i++;
 	}
-	return (i);
+	return (-1);
 }
 
 int		mandelbrot(double cx, double cy, int iteration)
@@ -49,7 +49,7 @@ int		mandelbrot(double cx, double cy, int iteration)
 			return (i);
 		i++;
 	}
-	return (i);
+	return (-1);
 }
 
 int		burningship(double cx, double cy, int iteration)
@@ -73,5 +73,5 @@ int		burningship(double cx, double cy, int iteration)
 			return (i);
 		i++;
 	}
-	return (i);
+	return (-1);
 }

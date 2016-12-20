@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 10:25:22 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/18 18:18:37 by hsabouri         ###   ########.fr       */
+/*   Updated: 2016/12/20 13:50:32 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ typedef struct	s_env
 	double	coefy;
 	int		iter;
 	int		inc_iter;
+	int		colormod;
 	int		speed;
 }				t_env;
 
@@ -83,7 +84,7 @@ int				mandelbrot(double cx, double cy, int iteration);
 int				julia(double zx, double zy, double cx, double cy, int iteration);
 void			ft_error(int code);
 t_color 		color_wheel(int i, t_env env);
-t_color 		color_gradient(int i, t_env env);
+t_color			color_gradient(int i, t_env env, t_color *grad, float *position);
 t_color 		weird_gradient(int i, t_env env);
 int				g_color_to_hex(t_color color);
 t_image			g_new_image(t_env env);
@@ -91,7 +92,8 @@ t_image			g_pixel_put(t_image image, int x, int y, t_color color);
 void			g_refresh_win(t_image image, t_env env);
 int				g_looped(t_env *env);
 int				g_keyboard_1(int keycode, t_env *env);
-void			g_move(int keycode, t_env *env);
+t_env			g_zoom(t_env env, double coef);
+int				g_mouse_click(int button, int x, int y, t_env *env);
 int				g_mouse(int x, int y, t_env *env);
 
 #endif

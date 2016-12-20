@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 15:05:03 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/17 18:15:01 by hsabouri         ###   ########.fr       */
+/*   Updated: 2016/12/20 13:50:45 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int main(int ac, char **av)
 	env.mlx = mlx_init();
 	env.win = mlx_new_window(env.mlx, env.width, env.height, "Fract'ol");
 	env.image = g_new_image(env);
+	env.colormod = 75;
 	mlx_loop_hook(env.mlx, g_looped, &env);
 	mlx_key_hook(env.win, g_keyboard_1, &env);
+	mlx_mouse_hook(env.win, g_mouse_click, &env);
 	mlx_hook(env.win, MOTIONNOTIFY, POINTERMOTIONMASK, g_mouse, &env);
 	mlx_loop(env.mlx);
 	return (0);

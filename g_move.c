@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   g_mouse.c                                          :+:      :+:    :+:   */
+/*   g_move.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/17 13:19:53 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 11:25:39 by hsabouri         ###   ########.fr       */
+/*   Created: 2016/12/20 10:27:03 by hsabouri          #+#    #+#             */
+/*   Updated: 2016/12/20 11:23:50 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		g_mouse(int x, int y, t_env *env)
+t_env	g_zoom(t_env env, double coef)
 {
-	if (env->fractal == JULIA)
-	{
-		env->inc_iter = 2;
-		env->iter = 50;
-		env->jx = (x - (env->width / 2)) / (double)env->width;
-		env->jy = (y - (env->height / 2)) / (double)env->height;
-	}
-	return (0);
-}
-
-int		g_mouse_click(int button, int x, int y, t_env *env)
-{
-	printf("Bouton : %d\n", button);
-	return (0);
+	env.coefx *= 4 * coef / (double)env.width;
+	env.coefy *= 4 * coef / (double)env.height;
+	env.offsetx = env.offsetx / env.coefx;
+	env.offsetx = env.offsetx / env.coefx;
+	return (env);
 }
