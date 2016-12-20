@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:15:10 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 17:19:26 by hsabouri         ###   ########.fr       */
+/*   Updated: 2016/12/20 19:19:47 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int		g_keyboard_1(int keycode, t_env *env)
 {
-	if (keycode == DN || keycode == UP || keycode == LT || keycode == RT)
-		g_move(keycode, env);
 	if (keycode == ADD)
 		env->iter += 20;
 	if (keycode == SUB)

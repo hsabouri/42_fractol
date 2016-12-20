@@ -6,19 +6,11 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 10:08:39 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 15:31:21 by hsabouri         ###   ########.fr       */
+/*   Updated: 2016/12/20 19:14:18 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-void		g_move(int keycode, t_env *env)
-{
-	if (keycode == UP)
-		env->offsety += 0.1;
-	if (keycode == DN)
-		env->offsety -= 0.1;
-}
 
 static int	g_fract_chooser(int i, int j, t_env env)
 {
