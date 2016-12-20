@@ -6,11 +6,40 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 14:55:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 13:48:59 by hsabouri         ###   ########.fr       */
+/*   Updated: 2016/12/20 15:23:26 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+t_color			*gradient_maker(t_color *gradient, t_env env)
+{
+	if (env.cscheme == PASTEL)
+	{
+		gradient[0] = (t_color){62, 0, 12};
+		gradient[1] = (t_color){124, 11, 43};
+		gradient[2] = (t_color){251, 75, 78};
+		gradient[3] = (t_color){124, 11, 43};
+		gradient[4] = (t_color){62, 12, 17};
+	}
+	else if (env.cscheme == BURNING)
+	{
+		gradient[0] = (t_color){0, 0, 0};
+		gradient[1] = (t_color){127, 0, 21};
+		gradient[2] = (t_color){255, 0, 43};
+		gradient[3] = (t_color){255, 127, 43};
+		gradient[4] = (t_color){255, 255, 43};
+	}
+	else
+	{
+		gradient[0] = (t_color){0, 7, 100};
+		gradient[1] = (t_color){32, 107, 203};
+		gradient[2] = (t_color){237, 255, 255};
+		gradient[3] = (t_color){255, 170, 0};
+		gradient[4] = (t_color){0, 2, 0};
+	}
+	return (gradient);
+}
 
 t_color			color_gradient(int i, t_env env, t_color *grad, float *position)
 {
@@ -48,16 +77,12 @@ t_color 		color_wheel(int i, t_env env)
 		return (new);
 	}
 	i = i % env.colormod;
+	gradient_maker(gradient, env);
 	position[0] = 0;
-	gradient[0] = (t_color){0, 7, 100};
 	position[1] = 0.26;
-	gradient[1] = (t_color){32, 107, 203};
 	position[2] = 0.52;
-	gradient[2] = (t_color){237, 255, 255};
 	position[3] = 0.7425;
-	gradient[3] = (t_color){255, 170, 0};
 	position[4] = 1;
-	gradient[4] = (t_color){0, 2, 0};
 	new = color_gradient(i, env, gradient, position);
 	return (new);
 }

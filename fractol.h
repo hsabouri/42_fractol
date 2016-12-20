@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 10:25:22 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 13:50:32 by hsabouri         ###   ########.fr       */
+/*   Updated: 2016/12/20 15:43:45 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,17 @@
 # define RED 2
 # define GRE 1
 # define BLU 0
+# define WIKIPEDIA 0
+# define PASTEL 1
+# define BURNING 2
 # define TITLE "Fract'ol"
 # define EXIT 0
 # define USAGE 1
 # define MALLOC 2
 # define FEXIST 3
-# define MANDEL 1
-# define JULIA 2
-# define BSHIP 3
+# define MANDEL 0
+# define JULIA 1
+# define BSHIP 2
 
 typedef struct	s_image
 {
@@ -67,6 +70,7 @@ typedef struct	s_env
 	int		height;
 	t_image image;
 	int		fractal;
+	int		lock:2;
 	double	jx;
 	double	jy;
 	double	offsetx;
@@ -76,7 +80,7 @@ typedef struct	s_env
 	int		iter;
 	int		inc_iter;
 	int		colormod;
-	int		speed;
+	int		cscheme;
 }				t_env;
 
 int				burningship(double cx, double cy, int iteration);

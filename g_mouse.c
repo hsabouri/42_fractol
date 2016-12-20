@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 13:19:53 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 11:25:39 by hsabouri         ###   ########.fr       */
+/*   Updated: 2016/12/20 15:44:40 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		g_mouse(int x, int y, t_env *env)
 {
-	if (env->fractal == JULIA)
+	if (env->fractal == JULIA && env->lock == 0)
 	{
 		env->inc_iter = 2;
 		env->iter = 50;
