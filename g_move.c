@@ -6,17 +6,25 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 10:27:03 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 11:23:50 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/02 13:17:56 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+t_env	g_init_pos(t_env env)
+{
+	env.offsetx = env.width / 2;
+	env.offsety = env.height / 2;
+	env.coefx = 4 / (double)env.width;
+	env.coefy = 4 / (double)env.height;
+	env.zoom = 1;
+	return (env);
+}
+
 t_env	g_zoom(t_env env, double coef)
 {
-	env.coefx *= 4 * coef / (double)env.width;
-	env.coefy *= 4 * coef / (double)env.height;
-	env.offsetx = env.offsetx / env.coefx;
-	env.offsetx = env.offsetx / env.coefx;
+	env.coefx *= coef;
+	env.coefy *= coef;
 	return (env);
 }

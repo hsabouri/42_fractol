@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 15:05:03 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 15:43:07 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/02 17:41:55 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ int main(int ac, char **av)
 
 	env.width = 1200;
 	env.height = 1200;
-	env.offsetx = env.width / 2;
-	env.offsety = env.height / 2;
-	env.coefx = 4 / (double)env.width;
-	env.coefy = 4 / (double)env.height;
+	env = g_init_pos(env);
 	env.fractal = JULIA;
 	env.jx = 0;
 	env.jy = 0;
@@ -31,6 +28,7 @@ int main(int ac, char **av)
 	env.win = mlx_new_window(env.mlx, env.width, env.height, "Fract'ol");
 	env.image = g_new_image(env);
 	env.colormod = 75;
+	env.mode = STICKY;
 	env.cscheme = PASTEL;
 	env.lock = 0;
 	mlx_loop_hook(env.mlx, g_looped, &env);

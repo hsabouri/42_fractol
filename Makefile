@@ -6,7 +6,7 @@
 #    By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/08/19 10:32:42 by hsabouri          #+#    #+#              #
-#    Updated: 2016/12/20 13:52:31 by hsabouri         ###   ########.fr        #
+#    Updated: 2017/01/02 19:15:33 by hsabouri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ CFLAGS = -Wall -Wextra -I$(INC)
 CFLAGS += -O2 -march=native
 #CFLAGS += -g -fsanitize=address
 LDFLAGS = -L $(LIBPATH) -l$(LIBNAME:lib%.a=%) -lmlx -framework OpenGL\
-			-framework AppKit
+			-framework AppKit -pthread
 CC = gcc
 SRC	= main.c g_pixel_put.c g_new_image.c g_refresh.c g_color.c m_fract.c \
-	 error.c g_keyboard.c g_mouse.c
+	 error.c g_keyboard.c g_mouse.c g_move.c
 INC = $(LIBPATH)/includes/
 OBJ	= $(SRC:%.c=%.o)
 OBJDIR = obj
