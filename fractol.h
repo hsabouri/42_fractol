@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 10:25:22 by hsabouri          #+#    #+#             */
-/*   Updated: 2017/01/02 19:05:13 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/03 16:36:48 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ void			g_refresh_win(t_image image, t_env env);
 int				g_looped(t_env *env);
 int				g_keyboard_1(int keycode, t_env *env);
 t_env			g_zoom(t_env env, double coef);
+t_env			g_move(t_env env, double x, double y);
 int				g_mouse_click(int button, int x, int y, t_env *env);
 int				g_mouse(int x, int y, t_env *env);
 t_env			g_init_pos(t_env env);

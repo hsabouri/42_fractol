@@ -6,13 +6,26 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:15:10 by hsabouri          #+#    #+#             */
-/*   Updated: 2017/01/02 17:42:47 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/03 16:40:22 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		g_keyboard_1(int keycode, t_env *env)
+static int		g_keyboard_2(int keycode, t_env *env)
+{
+	if (keycode == UP)
+		*env = g_move(*env, 0, 20);
+	if (keycode == DN)
+		*env = g_move(*env, 0, -20);
+	if (keycode == LT)
+		*env = g_move(*env, 20, 0);
+	if (keycode == RT)
+		*env = g_move(*env, -20, 0);
+	return (0);
+}
+
+int				g_keyboard_1(int keycode, t_env *env)
 {
 	if (keycode == ADD)
 		env->iter += 20;
@@ -38,5 +51,5 @@ int		g_keyboard_1(int keycode, t_env *env)
 		env->colormod -= (env->colormod > 1) ? 1 : 0;
 	if (keycode == N3)
 		env->mode = (env->mode == STICKY) ? 1 : STICKY;
-	return (0);
+	return (g_keyboard_2(keycode, env));
 }

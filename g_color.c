@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 14:55:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 15:23:26 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/03 17:36:12 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_color			*gradient_maker(t_color *gradient, t_env env)
 		gradient[1] = (t_color){32, 107, 203};
 		gradient[2] = (t_color){237, 255, 255};
 		gradient[3] = (t_color){255, 170, 0};
-		gradient[4] = (t_color){0, 2, 0};
+		gradient[4] = (t_color){0, 7, 100};
 	}
 	return (gradient);
 }
