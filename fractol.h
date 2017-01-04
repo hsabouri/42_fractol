@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 10:25:22 by hsabouri          #+#    #+#             */
-/*   Updated: 2017/01/03 16:36:48 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/04 16:10:46 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define ABS(Value) ((Value < 0) ? (-Value) : (Value))
 # define POINTERMOTIONMASK (1L<<6)
 # define MOTIONNOTIFY 6
+# define WIDTH 1200
+# define HEIGHT 1200
 # define RED 2
 # define GRE 1
 # define BLU 0
@@ -85,25 +87,19 @@ typedef struct	s_env
 	int		colormod;
 	int		cscheme;
 	int		mode;
+	int		smooth;
 }				t_env;
-
-typedef struct	s_thread
-{
-	t_env	*env;
-	int		thread;
-}				t_thread;
 
 int				burningship(double cx, double cy, int iteration);
 int				mandelbrot(double cx, double cy, int iteration);
-int				julia(double zx, double zy, double cx, double cy, int iteration);
+int				julia(double zx, double zy, t_env env);
 void			ft_error(int code);
-t_color 		color_wheel(int i, t_env env);
-t_color			color_gradient(int i, t_env env, t_color *grad, float *position);
-t_color 		weird_gradient(int i, t_env env);
+t_color			color_wheel(int i, t_env env);
+t_color			color_grad(int i, t_env env, t_color *grad, float *position);
 int				g_color_to_hex(t_color color);
 t_image			g_new_image(t_env env);
 t_image			g_pixel_put(t_image image, int x, int y, t_color color);
-void			gs_pixel_put(t_image *image, int x, int y, t_color color);
+t_image			g_epilepsie(t_image image);
 void			g_refresh_win(t_image image, t_env env);
 int				g_looped(t_env *env);
 int				g_keyboard_1(int keycode, t_env *env);

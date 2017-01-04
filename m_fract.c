@@ -6,22 +6,22 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 14:13:17 by hsabouri          #+#    #+#             */
-/*   Updated: 2016/12/20 13:45:37 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/04 14:35:22 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		julia(double zx, double zy, double cx, double cy, int iteration)
+int		julia(double zx, double zy, t_env env)
 {
-	int i;
-	double newx;
+	int		i;
+	double	newx;
 
 	i = 0;
-	while (i < iteration)
+	while (i < env.iter)
 	{
-		newx = zx * zx - zy * zy + cx;
-		zy = 2 * zx * zy + cy;
+		newx = zx * zx - zy * zy + env.jx;
+		zy = 2 * zx * zy + env.jy;
 		zx = newx;
 		if (zx * zx + zy * zy >= 4)
 			return (i);
@@ -32,10 +32,10 @@ int		julia(double zx, double zy, double cx, double cy, int iteration)
 
 int		mandelbrot(double cx, double cy, int iteration)
 {
-	int i;
-	double zx;
-	double zy;
-	double newx;
+	int		i;
+	double	zx;
+	double	zy;
+	double	newx;
 
 	i = 0;
 	zx = 0;
@@ -54,10 +54,10 @@ int		mandelbrot(double cx, double cy, int iteration)
 
 int		burningship(double cx, double cy, int iteration)
 {
-	int i;
-	double zx;
-	double zy;
-	double newx;
+	int		i;
+	double	zx;
+	double	zy;
+	double	newx;
 
 	i = 0;
 	zx = 0;

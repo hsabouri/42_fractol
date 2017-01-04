@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:15:10 by hsabouri          #+#    #+#             */
-/*   Updated: 2017/01/03 16:40:22 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/04 13:12:41 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static int		g_keyboard_2(int keycode, t_env *env)
 		*env = g_move(*env, 20, 0);
 	if (keycode == RT)
 		*env = g_move(*env, -20, 0);
+	if (keycode == S)
+		env->smooth = (env->smooth == 0) ? 1 : 0;
 	return (0);
 }
 
