@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 10:27:03 by hsabouri          #+#    #+#             */
-/*   Updated: 2017/01/04 15:31:03 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/04 17:41:36 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ t_env	g_init_pos(t_env env)
 
 t_env	g_move(t_env env, double x, double y)
 {
-	env.offsetx += x * (2 * env.coefx * env.width / 4) * env.width / 4;
-	env.offsety += y * (2 * env.coefy * env.height / 4) * env.height / 4;
+	env.offsetx += x;
+	env.offsety += y;
 	return (env);
 }
 

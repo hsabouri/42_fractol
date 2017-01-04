@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 10:08:39 by hsabouri          #+#    #+#             */
-/*   Updated: 2017/01/04 15:39:47 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/04 18:54:17 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ int			g_looped(t_env *env)
 		}
 		i++;
 	}
-	if (env->smooth)
-		env->image = g_epilepsie(env->image);
+	env->image = (env->smooth) ? g_epilepsie(env->image) : env->image;
 	env->iter += env->inc_iter;
 	g_refresh_win(env->image, *env);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 10:25:22 by hsabouri          #+#    #+#             */
-/*   Updated: 2017/01/04 16:10:46 by hsabouri         ###   ########.fr       */
+/*   Updated: 2017/01/04 16:59:00 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@
 # define PASTEL 1
 # define BURNING 2
 # define TITLE "Fract'ol"
-# define EXIT 0
-# define USAGE 1
-# define MALLOC 2
-# define FEXIST 3
 # define MANDEL 0
 # define JULIA 1
 # define BSHIP 2
